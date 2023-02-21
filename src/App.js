@@ -8,6 +8,8 @@ export default function App() {
   const setProfileContext = useRef((_nextProfile) => {});
   const setProfileRedux = useRef((_name) => {});
 
+  const NAMES = ['JUAN','ALICIA','CRISTIAN']
+
   const changeProfileName = () => {
     const name = sample(NAMES);
 
