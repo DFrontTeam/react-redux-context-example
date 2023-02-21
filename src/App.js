@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import "./style.css";
 import { sample } from 'lodash';
 import AppWithContext from './context-example/AppWithContext';
+import AppWithRedux from './with-redux/AppWithRedux';
 
 export default function App() {
   const setProfileContext = useRef((_nextProfile) => {});
@@ -30,7 +31,7 @@ export default function App() {
         <AppWithContext changeProfile={setProfileContext} />
 
         <h1>With Redux</h1>
-        {/* <AppWithRedux changeProfile={setProfileRedux} /> */}
+        <AppWithRedux changeProfile={setProfileRedux} />
       </header>
     </div>
   );
