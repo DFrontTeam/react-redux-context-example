@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-// import Header from './Header';
-// import Main from './Main';
+import Header from './Header';
+import Main from './Main';
 
 const INITIAL_PROFILE = {
   name: 'Guest',
@@ -18,9 +18,8 @@ const AppWithContext = ({ changeProfile }) => {
 
   return (
     <Context.Provider value={profile}>
-      {/* <Header />
-      <Main /> */}
-      <p>hola</p>
+      <Header />
+      <Main />
     </Context.Provider>
   );
 };

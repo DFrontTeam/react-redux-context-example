@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import "./style.css";
 import { sample } from 'lodash';
-import AppWithContext from './AppWithContext';
+import AppWithContext from './context-example/AppWithContext';
 
 export default function App() {
   const setProfileContext = useRef((_nextProfile) => {});
