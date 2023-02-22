@@ -1,19 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
-
+import {actionTypes} from './actionTypes';
 const INITIAL_PROFILE = {
   name: 'Guest',
+  age: 18
 };
 
-const profileSlice = createSlice({
-  name: 'profile',
-  initialState: INITIAL_PROFILE,
-  reducers: {
-    changeName: (state, action) => {
-      state.name = action.payload
-    }
-  }
-})
+const reducer = (state = INITIAL_PROFILE,action) => {
+  switch(action.type) {
+    case actionTypes.CHANGE_NAME:
+       return { ...state, name: action.payload };
+    default:
+       return state;
+ }
+}
 
-export const { changeName } = profileSlice.actions;
-
-export default profileSlice.reducer;
+export default reducer;

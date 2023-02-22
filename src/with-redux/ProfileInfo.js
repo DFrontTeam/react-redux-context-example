@@ -1,18 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-const ProfileInfo = ({ profile }) => {
-  console.log('[Redux] ProfileInfo render', profile);
+const ProfileInfo = () => {
+  const profileAge = useSelector((state)=>state.age)
+  console.log('[Redux] ProfileInfo render', profileAge);
 
   return (
-    <p>{JSON.stringify(profile)}</p>
+    <p>{profileAge}</p>
   );
 }
 
-const mapStateToProps = (state) => ({
-  profile: state,
-});
-
-export default connect(
-  mapStateToProps,
-)(ProfileInfo)
+export default ProfileInfo

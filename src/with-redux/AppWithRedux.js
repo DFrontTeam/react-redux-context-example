@@ -1,27 +1,22 @@
 import React from 'react';
-import { configureStore } from '@reduxjs/toolkit'
-import { Provider } from 'react-redux'
-
-import reducer, { changeName } from './reducer';
-
+import { useDispatch } from 'react-redux'
 import Header from './Header';
 import Main from './Main';
-
-const store = configureStore({
-  reducer,
-})
+import {setName} from './actions'
 
 const AppWithContext = ({ changeProfile }) => {
-  changeProfile.current = (name) => store.dispatch(changeName(name));
+  const dispatch = useDispatch()
+  changeProfile.current = (name) => dispatch(setName(name))
   
   console.log('AppWithRedux render');
 
   return (
-    <Provider store={store}>
+    <div>
       <Header />
       <Main />
-    </Provider>
+    </div>
   );
 };
 
 export default AppWithContext;
+

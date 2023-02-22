@@ -1,18 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-const ChangeName = ({ profile }) => {
-  console.log('[Redux] ChangeName render', profile);
+const ChangeName = () => {
+  const profileName = useSelector((state)=>state.name)
+  console.log('[Redux] ChangeName render', profileName);
 
   return (
-    <p>{JSON.stringify(profile)}</p>
+    <p>{profileName}</p>
   );
 }
 
-const mapStateToProps = (state) => ({
-  profile: state,
-});
-
-export default connect(
-  mapStateToProps,
-)(ChangeName)
+export default ChangeName;

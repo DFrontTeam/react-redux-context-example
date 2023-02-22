@@ -3,6 +3,11 @@ import "./style.css";
 import { sample } from 'lodash';
 import AppWithContext from './context-example/AppWithContext';
 import AppWithRedux from './with-redux/AppWithRedux';
+import reducer from './with-redux/reducer'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+const store = createStore(reducer);
 
 export default function App() {
   const setProfileContext = useRef((_nextProfile) => {});
@@ -33,7 +38,9 @@ export default function App() {
         <AppWithContext changeProfile={setProfileContext} />
 
         <h1>With Redux</h1>
-        <AppWithRedux changeProfile={setProfileRedux} />
+        <Provider store={store}>
+          <AppWithRedux changeProfile={setProfileRedux} />
+        </Provider>
       </header>
     </div>
   );
