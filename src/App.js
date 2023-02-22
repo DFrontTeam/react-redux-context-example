@@ -6,8 +6,9 @@ import AppWithRedux from './with-redux/AppWithRedux';
 import reducer from './with-redux/reducer'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension'
 
-const store = createStore(reducer);
+const store = createStore(reducer,composeWithDevTools());
 
 export default function App() {
   const setProfileContext = useRef((_nextProfile) => {});
