@@ -1,7 +1,7 @@
 import {actionTypes} from './actionTypes';
 const INITIAL_PROFILE = {
   name: 'Guest',
-  age: 18
+  age: 18,
 };
 
 const reducer = (state = INITIAL_PROFILE,action) => {
