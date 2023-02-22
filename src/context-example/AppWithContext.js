@@ -5,6 +5,7 @@ import Main from './Main';
 
 const INITIAL_PROFILE = {
   name: 'Guest',
+  age:18
 };
 
 export const Context = React.createContext(INITIAL_PROFILE);

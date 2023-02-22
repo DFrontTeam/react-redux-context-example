@@ -5,10 +5,10 @@ import { Context } from './AppWithContext';
 const ProfileInfo = () => {
   const profile = useContext(Context);
 
-  console.log('[Context] ProfileInfo render', profile);
+  console.log('[Context] ProfileInfo render', profile.age);
 
   return (
-    <p>{JSON.stringify(profile)}</p>
+    <p>{profile.age}</p>
   );
 }
 

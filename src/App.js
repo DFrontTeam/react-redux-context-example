@@ -21,7 +21,7 @@ export default function App() {
     console.log('[CHANGING PROFILE]', name);
 
     if (setProfileContext.current !== undefined) {
-      setProfileContext.current({ name });
+      setProfileContext.current({ name,age:18 });
     }
 
     if (setProfileRedux.current !== undefined) {
