@@ -4,10 +4,12 @@ const INITIAL_PROFILE = {
   age: 18,
 };
 
+const setName = (state,payload) => {return { ...state, name: payload }}
+
 const reducer = (state = INITIAL_PROFILE,action) => {
   switch(action.type) {
     case actionTypes.CHANGE_NAME:
-       return { ...state, name: action.payload };
+       return setName(state,action.payload);
     default:
        return state;
  }

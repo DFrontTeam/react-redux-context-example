@@ -1,3 +1,3 @@
 export const actionTypes = {
-  CHANGE_NAME: 'CHANGE_NAME'
+  CHANGE_NAME: 'react-redux-context-example/with-redux/CHANGE_NAME'
 }
